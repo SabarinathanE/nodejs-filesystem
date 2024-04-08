@@ -1,0 +1,13 @@
+{
+  "name": "day-37-nodejs",
+  "version": "1.0.0",
+  "description": "Day 37 Task",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Sabari",
+  "license": "MIT"
+}
