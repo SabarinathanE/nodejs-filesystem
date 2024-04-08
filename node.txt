@@ -1,0 +1,10 @@
+1) GitHub Link:
+https://github.com/SabarinathanE/nodejs-filesystem.git
+
+2) Render Link:
+https://nodejs-filesystem-yci4.onrender.com/
+
+-> Simply I created a nodejs server, to create a file and add the timestamp inside the text file as a Content.
+-> push my repository to your local and access with VS Code, and run a command in Terminal as "node index.js".
+-> It will create a file inside the vs code and a timestamp will be created inside the file.
+-> In the log section u can find the total Directorie
