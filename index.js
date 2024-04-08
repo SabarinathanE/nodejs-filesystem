@@ -9,6 +9,6 @@ const server = createServer((req, res) => {
     res.end("File Created Succesfully")
 })
 
-server.listen(3000, "127.0.0.1", () => {
+server.listen(3000, "0.0.0.0", () => {
     console.log("Listening on 127.0.0.1: 3000")
 })
