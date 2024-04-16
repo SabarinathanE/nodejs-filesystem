@@ -2,6 +2,7 @@ const { response } = require("express");
 const fs = require("fs");
 var revil = [];
 
+
 getDateString=()=> {
     const date = new Date();
     var currentTimeInSeconds = Math.floor(Date.now() / 1000);
@@ -45,6 +46,7 @@ fs.readdir(Store, (err, files) => {
     });
 
 });
+// to get files
 app.get("/files", (request, response) => {
     response.send(revil);
 });
