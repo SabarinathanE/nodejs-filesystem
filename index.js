@@ -1,14 +1,50 @@
-const {createServer} = require("node:http");
-const {writeFileAndUpdate, readdiectory} =  require("./filesystem")
+const { response } = require("express");
+const fs = require("fs");
+var revil = [];
+
+getDateString=()=> {
+    const date = new Date();
+    var currentTimeInSeconds = Math.floor(Date.now() / 1000);
+    const year = date.getFullYear();
+    const month = `${date.getMonth() + 1}`.padStart(2, '0');
+    const day = `${date.getDate()}`.padStart(2, '0');
+    var hour = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    return `${year}-${month}-${day}-${hour}-${minutes}-${seconds}` 
+}
 
 
-const server = createServer((req, res) => {
-    writeFileAndUpdate();
-    readdiectory();
-    res.writeHead(200, {"Content-Type" : "text/plain"});
-    res.end("File Created Succesfully")
-})
+var data = getDateString();
+const date = new Date();
+let time = date.getTime();
 
-server.listen(3000, "0.0.0.0", () => {
-    console.log("Listening on 127.0.0.1: 3000")
-})
+const express = require("express");   
+const app = express();
+const PORT = 3000;
+
+fs.writeFile(`./Task/${data}.txt`, `Date:${data}Time:${time}`,
+ (err) => console.log("hi there project success"));
+
+fs.readFile(`./Task/${data}.txt`, "utf-8", (err, data) => { 
+    console.log(data);
+    app.get("/", (request, response) => {
+        response.send(data);
+    });
+    app.listen(PORT, () => console.log("App is started", PORT));
+}
+);
+
+const Store = './Task';
+
+fs.readdir(Store, (err, files) => {
+   
+    files.forEach(file => {
+        console.log(file);
+        revil.push(file);
+    });
+
+});
+app.get("/files", (request, response) => {
+    response.send(revil);
+});

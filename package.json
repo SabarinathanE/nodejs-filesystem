@@ -9,5 +9,8 @@
     "start": "node index.js"
   },
   "author": "Sabari",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
